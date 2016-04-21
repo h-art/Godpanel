@@ -1,4 +1,4 @@
 *.pyc
 *.pyo
-static
+/static
 godpanel/settings/local.py
