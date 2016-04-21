@@ -7,3 +7,13 @@ body {
   width: 205px;
   height: 50px;
 }
+
+#powered {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+}

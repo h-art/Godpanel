@@ -15,6 +15,14 @@
 <body>
   <div class="container">
     {% block content %}{% endblock %}
+
+    <div class="row">
+      <div class="col-md-12">
+        <footer class="footer">
+          <p>Godpanel &copy; made in <a href="http://www.h-art.com">H-ART</a> <a href="http://www.djangoproject.com"><img id="powered" src="https://www.djangoproject.com/s/img/badges/djangopowered126x54.gif" alt="Django powered" width="63" height="27"></a></p>
+        </footer>
+      </div>
+    </div>
   </div>
 
   <script src="{% static 'panel/js/jquery.min.js' %}"></script>
