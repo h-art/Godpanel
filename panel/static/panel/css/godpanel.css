@@ -8,6 +8,10 @@ body {
   height: 50px;
 }
 
+#title {
+  text-align: center;
+}
+
 #powered {
   vertical-align: middle;
   margin-left: 5px;
