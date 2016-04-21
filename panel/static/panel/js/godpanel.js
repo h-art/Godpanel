@@ -1,7 +1,7 @@
 $(function () {
   window.godpanel = $('#calendar').fullCalendar({
     schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
-    aspectRatio: 2,
+    aspectRatio: 2.5,
     resourceLabelText: 'Risorse',
     defaultView: 'timelineMonth',
     defaultDate: new Date(),
