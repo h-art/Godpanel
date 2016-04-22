@@ -31,6 +31,7 @@ $(function () {
       center: 'title'
     },
     eventRender: function (event, element, view) {
+      event.note = (event.note) ? event.note : '-'; // tweak event note.
       element.find('.fc-title').append(' (' + event.saturation + '%)');
       element.find('.fc-time').remove();
       element.on('click', function(e) {
@@ -50,7 +51,8 @@ $(function () {
                 + 'Progetto: ' + event.title + '<br>'
                 + 'Saturazione: ' + event.saturation + '<br>'
                 + 'Inizio: ' + moment(event.start).format('DD/MM/YYYY') + '<br>'
-                + 'Fine: ' + moment(event.end).format('DD/MM/YYYY')
+                + 'Fine: ' + moment(event.end).format('DD/MM/YYYY') + '<br>'
+                + 'Note: ' + event.note
         },
         position: {
           target: 'mouse',

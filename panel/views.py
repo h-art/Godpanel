@@ -27,7 +27,8 @@ def allocations(request):
     'saturation': allocation.saturation,
     'title': allocation.project.name,
     'client': allocation.project.client.name,
-    'allocation_type': allocation.allocation_type
+    'allocation_type': allocation.allocation_type,
+    'note': allocation.note
   } for allocation in Allocation.objects.all()]
 
   return JsonResponse(response, safe=False)
