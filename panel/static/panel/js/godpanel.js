@@ -18,7 +18,7 @@ $(function () {
           allocationModal
             .modal({show: true})
             .on('shown.bs.modal', function () {
-              $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/add');
+              $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/add?_popup=1');
             })
             .on('hidden.bs.modal', function () {
               godpanel.fullCalendar('refetchEvents');
@@ -38,7 +38,7 @@ $(function () {
         allocationModal
           .modal({show: true})
           .on('shown.bs.modal', function () {
-            $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/' + event.id + '/change');
+            $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/' + event.id + '/change?_popup=1');
           })
           .on('hidden.bs.modal', function () {
             godpanel.fullCalendar('refetchEvents');
