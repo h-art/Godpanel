@@ -12,6 +12,17 @@ $(function () {
     eventRender: function (event, element, view) {
       element.find('.fc-title').append(' (' + event.saturation + '%)');
       element.find('.fc-time').remove();
+      element.on('click', function(e) {
+        $('#allocation-modal')
+          .modal({show: true})
+          .on('shown.bs.modal', function () {
+            console.log('cao');
+            $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/' + event.id + '/change');
+          })
+          .on('hidden.bs.modal', function () {
+            godpanel.fullCalendar('refetchEvents');
+          });
+      }),
       element.qtip({
         content: {
           text: '<strong>' + event.allocation_type + '</strong><br>'
@@ -24,7 +35,7 @@ $(function () {
         position: {
           target: 'mouse',
           adjust: {
-            mouse: true  // Can be omitted (e.g. default behaviour)
+            mouse: false  // Can be omitted (e.g. default behaviour)
           }
         }
       });

@@ -17,6 +17,10 @@ body {
   margin-left: 5px;
 }
 
+.modal-dialog.modal-admin {
+  width: 90%;
+}
+
 .footer {
   text-align: center;
   padding: 20px 0;
