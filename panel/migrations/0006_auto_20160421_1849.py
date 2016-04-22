@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 import datetime
 from django.db import migrations, models
+from django.utils import timezone
 
 
 class Migration(migrations.Migration):
@@ -17,15 +18,5 @@ class Migration(migrations.Migration):
             model_name='allocation',
             name='saturation',
             field=models.IntegerField(default=50),
-        ),
-        migrations.AlterField(
-            model_name='allocation',
-            name='end',
-            field=models.DateField(),
-        ),
-        migrations.AlterField(
-            model_name='allocation',
-            name='start',
-            field=models.DateField(default=datetime.datetime(2016, 4, 21, 18, 49, 16, 224549)),
         ),
     ]

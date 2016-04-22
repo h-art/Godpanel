@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 import datetime
 from django.db import migrations, models
+from django.utils import timezone
 
 
 class Migration(migrations.Migration):
@@ -16,11 +17,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='allocation',
             name='end',
-            field=models.DateTimeField(default=datetime.datetime(2016, 4, 21, 18, 0)),
+            field=models.DateTimeField(default=timezone.now()),
         ),
         migrations.AlterField(
             model_name='allocation',
             name='start',
-            field=models.DateTimeField(default=datetime.datetime(2016, 4, 21, 9, 0)),
+            field=models.DateTimeField(default=timezone.now()),
         ),
     ]

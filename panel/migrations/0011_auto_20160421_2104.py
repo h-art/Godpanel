@@ -10,11 +10,3 @@ class Migration(migrations.Migration):
     dependencies = [
         ('panel', '0010_auto_20160421_1916'),
     ]
-
-    operations = [
-        migrations.AlterField(
-            model_name='allocation',
-            name='start',
-            field=models.DateField(),
-        ),
-    ]

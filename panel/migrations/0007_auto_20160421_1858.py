@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 import datetime
 from django.db import migrations, models
 import django.db.models.deletion
+from django.utils import timezone
 
 
 class Migration(migrations.Migration):
@@ -20,11 +21,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=25)),
             ],
-        ),
-        migrations.AlterField(
-            model_name='allocation',
-            name='start',
-            field=models.DateField(default=datetime.datetime(2016, 4, 21, 18, 58, 58, 329521)),
         ),
         migrations.AlterField(
             model_name='employee',
