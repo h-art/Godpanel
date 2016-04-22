@@ -20,6 +20,7 @@ simplegeneric==0.8.1
 six==1.10.0
 stevedore==1.10.0
 traitlets==4.0.0
+uWSGI==2.0.12
 virtualenv==13.1.2
 virtualenv-clone==0.2.6
 virtualenvwrapper==4.7.1
