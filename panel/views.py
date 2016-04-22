@@ -1,11 +1,15 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponseForbidden, JsonResponse
 from panel.models import Employee, Allocation
+from django.core.urlresolvers import reverse
 from datetime import datetime
 
 
 def index(request):
-  return render(request, 'index.html', {})
+  if request.user.is_authenticated():
+    return render(request, 'index.html', {})
+  else:
+    return redirect('%s%s' % (reverse('admin:login'), '?next=/'))
 
 def employees(request):
   response = [{
@@ -15,7 +19,11 @@ def employees(request):
     'area': employee.area.name
   } for employee in Employee.objects.all()]
 
-  return JsonResponse(response, safe=False)
+  if request.user.is_authenticated():
+    return JsonResponse(response, safe=False)
+  else:
+    return HttpResponseForbidden('You must authenticate')
+
 
 def allocations(request):
   response = [{
@@ -31,4 +39,7 @@ def allocations(request):
     'note': allocation.note
   } for allocation in Allocation.objects.all()]
 
-  return JsonResponse(response, safe=False)
+  if request.user.is_authenticated():
+    return JsonResponse(response, safe=False)
+  else:
+    return HttpResponseForbidden('You must authenticate')
