@@ -1,4 +1,6 @@
 $(function () {
+  var allocationModal = $('#allocation-modal');
+
   window.godpanel = $('#calendar').fullCalendar({
     schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
     aspectRatio: 2.5,
@@ -9,14 +11,32 @@ $(function () {
     resources: 'employees',
     weekends: false,
     lang: 'it',
+    customButtons: {
+      myCustomButton: {
+        text: '+ allocazione',
+        click: function () {
+          allocationModal
+            .modal({show: true})
+            .on('shown.bs.modal', function () {
+              $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/add');
+            })
+            .on('hidden.bs.modal', function () {
+              godpanel.fullCalendar('refetchEvents');
+            });
+        }
+      }
+    },
+    header: {
+      left: 'myCustomButton',
+      center: 'title'
+    },
     eventRender: function (event, element, view) {
       element.find('.fc-title').append(' (' + event.saturation + '%)');
       element.find('.fc-time').remove();
       element.on('click', function(e) {
-        $('#allocation-modal')
+        allocationModal
           .modal({show: true})
           .on('shown.bs.modal', function () {
-            console.log('cao');
             $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/panel/allocation/' + event.id + '/change');
           })
           .on('hidden.bs.modal', function () {
