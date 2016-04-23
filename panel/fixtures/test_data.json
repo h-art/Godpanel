@@ -1,0 +1,49 @@
+[
+    {
+        "fields": {
+            "name": "Role 1"
+        },
+        "model": "panel.area",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Role 1"
+        },
+        "model": "panel.role",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Client 1"
+        },
+        "model": "panel.client",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "client": 1,
+            "name": "Project 1"
+        },
+        "model": "panel.project",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-23T15:55:27.874Z",
+            "email": "test@test.com",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "last_login": "2016-04-23T15:56:47.649Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$24000$JrbwpYlBUFtE$sV89uHhSU7TWtU/OFT3kd8WCZgLPzk/IxDv393z2qpE=",
+            "user_permissions": [],
+            "username": "test"
+        },
+        "model": "auth.user",
+        "pk": 1
+    }
+]
