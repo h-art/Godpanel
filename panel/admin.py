@@ -6,8 +6,9 @@ admin.site.site_title = 'Godpanel'
 admin.site.site_header = 'Godpanel'
 
 class EmployeeAdmin(admin.ModelAdmin):
-  list_display = ('full_name', 'email', 'area', 'role')
+  list_display = ('email', 'last_name', 'first_name', 'area', 'role')
   list_filter = ('area', 'role')
+  ordering = ('last_name',)
 
 class ProjectAdmin(admin.ModelAdmin):
   list_display = ('name', 'client')

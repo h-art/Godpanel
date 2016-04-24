@@ -14,7 +14,7 @@ def index(request):
 def employees(request):
   response = [{
     'id': employee.id,
-    'title': employee.full_name,
+    'title': ' '.join([employee.first_name, employee.last_name]),
     'role': employee.role.name,
     'area': employee.area.name
   } for employee in Employee.objects.all()]

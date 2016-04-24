@@ -1,1 +1,786 @@
-[{"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "panel", "model": "area"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "panel", "model": "employee"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "panel", "model": "project"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "panel", "model": "allocation"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "panel", "model": "role"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "panel", "model": "client"}}, {"model": "sessions.session", "pk": "ntkfkzn3cxydp2sbferq6f8kxw98tjc6", "fields": {"session_data": "ZTMwMjg4MjFjY2MwYTAyZGM3MDAwNWYwZjRlOTQ4NTYwZmIxNTRhOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjNlOTAwYzZiZjYxZmZjYTg0MDYyMjg2NzYzODhhNTVjMjAyMjhlYWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=", "expire_date": "2016-05-05T19:02:48.394Z"}}, {"model": "sessions.session", "pk": "rqigqcq12yijy283c06ep7dl9rh1d4qg", "fields": {"session_data": "ZTMwMjg4MjFjY2MwYTAyZGM3MDAwNWYwZjRlOTQ4NTYwZmIxNTRhOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjNlOTAwYzZiZjYxZmZjYTg0MDYyMjg2NzYzODhhNTVjMjAyMjhlYWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=", "expire_date": "2016-05-04T16:43:59.010Z"}}, {"model": "sessions.session", "pk": "tcghutnkl83e68m4ib8ccj285078oszj", "fields": {"session_data": "ZTMwMjg4MjFjY2MwYTAyZGM3MDAwNWYwZjRlOTQ4NTYwZmIxNTRhOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjNlOTAwYzZiZjYxZmZjYTg0MDYyMjg2NzYzODhhNTVjMjAyMjhlYWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=", "expire_date": "2016-05-04T15:24:58.262Z"}}, {"model": "panel.area", "pk": 1, "fields": {"name": "DEV"}}, {"model": "panel.role", "pk": 1, "fields": {"name": "Frontend"}}, {"model": "panel.role", "pk": 2, "fields": {"name": "Backend"}}, {"model": "panel.role", "pk": 3, "fields": {"name": "Full stack"}}, {"model": "panel.client", "pk": 1, "fields": {"name": "Unipd"}}, {"model": "panel.client", "pk": 2, "fields": {"name": "Kinder"}}, {"model": "panel.client", "pk": 3, "fields": {"name": "Molteni"}}, {"model": "panel.client", "pk": 4, "fields": {"name": "AKQA"}}, {"model": "panel.employee", "pk": 1, "fields": {"full_name": "Matteo Rosati", "email": "mrosati@h-art.com", "area": 1, "role": 3}}, {"model": "panel.employee", "pk": 2, "fields": {"full_name": "Cristian Pavan", "email": "cpavan@h-art.com", "area": 1, "role": 2}}, {"model": "panel.employee", "pk": 3, "fields": {"full_name": "Edoardo Rivello", "email": "erivello@h-art.com", "area": 1, "role": 2}}, {"model": "panel.employee", "pk": 4, "fields": {"full_name": "Nicholas Ruggeri", "email": "nruggeri@h-art.com", "area": 1, "role": 1}}, {"model": "panel.employee", "pk": 5, "fields": {"full_name": "Enrico Antonello", "email": "eantonello@h-art.com", "area": 1, "role": 2}}, {"model": "panel.employee", "pk": 6, "fields": {"full_name": "Andrea Restello", "email": "arestello.ce@h-art.com", "area": 1, "role": 2}}, {"model": "panel.employee", "pk": 7, "fields": {"full_name": "Lu Chang", "email": "lchang.ce@h-art.com", "area": 1, "role": 1}}, {"model": "panel.employee", "pk": 8, "fields": {"full_name": "Andrea Collet", "email": "acollet@h-art.com", "area": 1, "role": 1}}, {"model": "panel.employee", "pk": 9, "fields": {"full_name": "Maurizio Fiaschini", "email": "mfiaschini@h-art.com", "area": 1, "role": 1}}, {"model": "panel.employee", "pk": 10, "fields": {"full_name": "Fabrizio Calderan", "email": "fcalderan@h-art.com", "area": 1, "role": 1}}, {"model": "panel.employee", "pk": 11, "fields": {"full_name": "Fabrizio Codello", "email": "fcodello@h-art.com", "area": 1, "role": 2}}, {"model": "panel.employee", "pk": 12, "fields": {"full_name": "Daniele Marchesini", "email": "dmarchesini@h-art.com", "area": 1, "role": 1}}, {"model": "panel.employee", "pk": 13, "fields": {"full_name": "Marco Sors", "email": "msors@h-art.com", "area": 1, "role": 1}}, {"model": "panel.project", "pk": 3, "fields": {"name": "Contract division", "client": 3}}, {"model": "panel.project", "pk": 7, "fields": {"name": "Lasciati ispirare", "client": 2}}, {"model": "panel.project", "pk": 8, "fields": {"name": "Itinerari", "client": 1}}, {"model": "panel.project", "pk": 9, "fields": {"name": "Herm\u00e8s Apollo", "client": 4}}, {"model": "panel.allocation", "pk": 8, "fields": {"start": "2016-05-02", "end": "2016-05-13", "employee": 6, "project": 3, "saturation": 100, "note": "", "allocation_type": "allocation"}}, {"model": "panel.allocation", "pk": 9, "fields": {"start": "2016-05-02", "end": "2016-05-13", "employee": 4, "project": 3, "saturation": 100, "note": "", "allocation_type": "allocation"}}, {"model": "panel.allocation", "pk": 10, "fields": {"start": "2016-05-02", "end": "2016-05-05", "employee": 7, "project": 7, "saturation": 100, "note": "18/5 golive", "allocation_type": "guess"}}, {"model": "panel.allocation", "pk": 11, "fields": {"start": "2016-05-05", "end": "2016-05-13", "employee": 2, "project": 7, "saturation": 100, "note": "18/5 golive", "allocation_type": "guess"}}, {"model": "panel.allocation", "pk": 12, "fields": {"start": "2016-04-26", "end": "2016-04-27", "employee": 8, "project": 8, "saturation": 25, "note": "-", "allocation_type": "guess"}}, {"model": "panel.allocation", "pk": 14, "fields": {"start": "2016-04-21", "end": "2016-04-29", "employee": 1, "project": 9, "saturation": 100, "note": "", "allocation_type": "allocation"}}, {"model": "panel.allocation", "pk": 15, "fields": {"start": "2016-05-02", "end": "2016-05-31", "employee": 1, "project": 9, "saturation": 100, "note": "", "allocation_type": "allocation"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can add user", "content_type": 4, "codename": "add_user"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can change user", "content_type": 4, "codename": "change_user"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can delete user", "content_type": 4, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add content type", "content_type": 5, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change content type", "content_type": 5, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete content type", "content_type": 5, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can add session", "content_type": 6, "codename": "add_session"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can change session", "content_type": 6, "codename": "change_session"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can delete session", "content_type": 6, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can add area", "content_type": 7, "codename": "add_area"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can change area", "content_type": 7, "codename": "change_area"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can delete area", "content_type": 7, "codename": "delete_area"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can add employee", "content_type": 8, "codename": "add_employee"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can change employee", "content_type": 8, "codename": "change_employee"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can delete employee", "content_type": 8, "codename": "delete_employee"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add project", "content_type": 9, "codename": "add_project"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change project", "content_type": 9, "codename": "change_project"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete project", "content_type": 9, "codename": "delete_project"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can add allocation", "content_type": 10, "codename": "add_allocation"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can change allocation", "content_type": 10, "codename": "change_allocation"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can delete allocation", "content_type": 10, "codename": "delete_allocation"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can add role", "content_type": 11, "codename": "add_role"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can change role", "content_type": 11, "codename": "change_role"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can delete role", "content_type": 11, "codename": "delete_role"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can add client", "content_type": 12, "codename": "add_client"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can change client", "content_type": 12, "codename": "change_client"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can delete client", "content_type": 12, "codename": "delete_client"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$24000$XpWRRlYFG9LX$89W5kntqXLEipNP2Xzt8dCKqFk3fvx1aEJ2+7tFjzn4=", "last_login": "2016-04-21T19:02:48.392Z", "is_superuser": true, "username": "admin", "first_name": "Matteo", "last_name": "Rosati", "email": "mrosati@h-art.com", "is_staff": true, "is_active": true, "date_joined": "2016-04-20T15:24:50Z", "groups": [], "user_permissions": []}}]
+[
+    {
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "app_label": "panel",
+            "model": "area"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "app_label": "panel",
+            "model": "employee"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "app_label": "panel",
+            "model": "project"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "app_label": "panel",
+            "model": "allocation"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "app_label": "panel",
+            "model": "role"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "app_label": "panel",
+            "model": "client"
+        },
+        "model": "contenttypes.contenttype",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "expire_date": "2016-05-05T19:02:48.394Z",
+            "session_data": "ZTMwMjg4MjFjY2MwYTAyZGM3MDAwNWYwZjRlOTQ4NTYwZmIxNTRhOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjNlOTAwYzZiZjYxZmZjYTg0MDYyMjg2NzYzODhhNTVjMjAyMjhlYWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+        },
+        "model": "sessions.session",
+        "pk": "ntkfkzn3cxydp2sbferq6f8kxw98tjc6"
+    },
+    {
+        "fields": {
+            "expire_date": "2016-05-04T16:43:59.010Z",
+            "session_data": "ZTMwMjg4MjFjY2MwYTAyZGM3MDAwNWYwZjRlOTQ4NTYwZmIxNTRhOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjNlOTAwYzZiZjYxZmZjYTg0MDYyMjg2NzYzODhhNTVjMjAyMjhlYWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+        },
+        "model": "sessions.session",
+        "pk": "rqigqcq12yijy283c06ep7dl9rh1d4qg"
+    },
+    {
+        "fields": {
+            "expire_date": "2016-05-04T15:24:58.262Z",
+            "session_data": "ZTMwMjg4MjFjY2MwYTAyZGM3MDAwNWYwZjRlOTQ4NTYwZmIxNTRhOTp7Il9hdXRoX3VzZXJfaGFzaCI6IjNlOTAwYzZiZjYxZmZjYTg0MDYyMjg2NzYzODhhNTVjMjAyMjhlYWYiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+        },
+        "model": "sessions.session",
+        "pk": "tcghutnkl83e68m4ib8ccj285078oszj"
+    },
+    {
+        "fields": {
+            "name": "DEV"
+        },
+        "model": "panel.area",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Frontend"
+        },
+        "model": "panel.role",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Backend"
+        },
+        "model": "panel.role",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Full stack"
+        },
+        "model": "panel.role",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "Unipd"
+        },
+        "model": "panel.client",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "name": "Kinder"
+        },
+        "model": "panel.client",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "name": "Molteni"
+        },
+        "model": "panel.client",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "name": "AKQA"
+        },
+        "model": "panel.client",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "mrosati@h-art.com",
+            "first_name": "Matteo",
+            "last_name": "Rosati",
+            "role": 3
+        },
+        "model": "panel.employee",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "cpavan@h-art.com",
+            "first_name": "Cristian",
+            "last_name": "Pavan",
+            "role": 2
+        },
+        "model": "panel.employee",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "erivello@h-art.com",
+            "first_name": "Edoardo",
+            "last_name": "Rivello",
+            "role": 2
+        },
+        "model": "panel.employee",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "nruggeri@h-art.com",
+            "first_name": "Nicholas",
+            "last_name": "Ruggeri",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "eantonello@h-art.com",
+            "first_name": "Enrico",
+            "last_name": "Antonello",
+            "role": 2
+        },
+        "model": "panel.employee",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "arestello.ce@h-art.com",
+            "first_name": "Andrea",
+            "last_name": "Restello",
+            "role": 2
+        },
+        "model": "panel.employee",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "lchang.ce@h-art.com",
+            "first_name": "Hung-Lu",
+            "last_name": "Chang",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "acollet@h-art.com",
+            "first_name": "Andrea",
+            "last_name": "Collet",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "mfiaschini@h-art.com",
+            "first_name": "Maurizio",
+            "last_name": "Fiaschini",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "fcalderan@h-art.com",
+            "first_name": "Fabrizio",
+            "last_name": "Calderan",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "fcodello@h-art.com",
+            "first_name": "Fabrizio",
+            "last_name": "Codello",
+            "role": 2
+        },
+        "model": "panel.employee",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "dmarchesini@h-art.com",
+            "first_name": "Daniele",
+            "last_name": "Marchesini",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "area": 1,
+            "email": "msors@h-art.com",
+            "first_name": "Marco",
+            "last_name": "Sors",
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 13
+    },
+    {
+        "fields": {
+            "client": 3,
+            "name": "Contract division"
+        },
+        "model": "panel.project",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "client": 2,
+            "name": "Lasciati ispirare"
+        },
+        "model": "panel.project",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "client": 1,
+            "name": "Itinerari"
+        },
+        "model": "panel.project",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "client": 4,
+            "name": "Herm\u00e8s Apollo"
+        },
+        "model": "panel.project",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "allocation_type": "allocation",
+            "employee": 6,
+            "end": "2016-05-13",
+            "note": "",
+            "project": 3,
+            "saturation": 100,
+            "start": "2016-05-02"
+        },
+        "model": "panel.allocation",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "allocation_type": "allocation",
+            "employee": 4,
+            "end": "2016-05-13",
+            "note": "",
+            "project": 3,
+            "saturation": 100,
+            "start": "2016-05-02"
+        },
+        "model": "panel.allocation",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "allocation_type": "guess",
+            "employee": 7,
+            "end": "2016-05-05",
+            "note": "18/5 golive",
+            "project": 7,
+            "saturation": 100,
+            "start": "2016-05-02"
+        },
+        "model": "panel.allocation",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "allocation_type": "guess",
+            "employee": 2,
+            "end": "2016-05-13",
+            "note": "18/5 golive",
+            "project": 7,
+            "saturation": 100,
+            "start": "2016-05-05"
+        },
+        "model": "panel.allocation",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "allocation_type": "guess",
+            "employee": 8,
+            "end": "2016-04-27",
+            "note": "-",
+            "project": 8,
+            "saturation": 25,
+            "start": "2016-04-26"
+        },
+        "model": "panel.allocation",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "allocation_type": "allocation",
+            "employee": 1,
+            "end": "2016-04-29",
+            "note": "",
+            "project": 9,
+            "saturation": 100,
+            "start": "2016-04-21"
+        },
+        "model": "panel.allocation",
+        "pk": 14
+    },
+    {
+        "fields": {
+            "allocation_type": "allocation",
+            "employee": 1,
+            "end": "2016-05-31",
+            "note": "",
+            "project": 9,
+            "saturation": 100,
+            "start": "2016-05-02"
+        },
+        "model": "panel.allocation",
+        "pk": 15
+    },
+    {
+        "fields": {
+            "codename": "add_logentry",
+            "content_type": 1,
+            "name": "Can add log entry"
+        },
+        "model": "auth.permission",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "codename": "change_logentry",
+            "content_type": 1,
+            "name": "Can change log entry"
+        },
+        "model": "auth.permission",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "codename": "delete_logentry",
+            "content_type": 1,
+            "name": "Can delete log entry"
+        },
+        "model": "auth.permission",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "codename": "add_permission",
+            "content_type": 2,
+            "name": "Can add permission"
+        },
+        "model": "auth.permission",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "codename": "change_permission",
+            "content_type": 2,
+            "name": "Can change permission"
+        },
+        "model": "auth.permission",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "codename": "delete_permission",
+            "content_type": 2,
+            "name": "Can delete permission"
+        },
+        "model": "auth.permission",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "codename": "add_group",
+            "content_type": 3,
+            "name": "Can add group"
+        },
+        "model": "auth.permission",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "codename": "change_group",
+            "content_type": 3,
+            "name": "Can change group"
+        },
+        "model": "auth.permission",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "codename": "delete_group",
+            "content_type": 3,
+            "name": "Can delete group"
+        },
+        "model": "auth.permission",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "codename": "add_user",
+            "content_type": 4,
+            "name": "Can add user"
+        },
+        "model": "auth.permission",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "codename": "change_user",
+            "content_type": 4,
+            "name": "Can change user"
+        },
+        "model": "auth.permission",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "codename": "delete_user",
+            "content_type": 4,
+            "name": "Can delete user"
+        },
+        "model": "auth.permission",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "codename": "add_contenttype",
+            "content_type": 5,
+            "name": "Can add content type"
+        },
+        "model": "auth.permission",
+        "pk": 13
+    },
+    {
+        "fields": {
+            "codename": "change_contenttype",
+            "content_type": 5,
+            "name": "Can change content type"
+        },
+        "model": "auth.permission",
+        "pk": 14
+    },
+    {
+        "fields": {
+            "codename": "delete_contenttype",
+            "content_type": 5,
+            "name": "Can delete content type"
+        },
+        "model": "auth.permission",
+        "pk": 15
+    },
+    {
+        "fields": {
+            "codename": "add_session",
+            "content_type": 6,
+            "name": "Can add session"
+        },
+        "model": "auth.permission",
+        "pk": 16
+    },
+    {
+        "fields": {
+            "codename": "change_session",
+            "content_type": 6,
+            "name": "Can change session"
+        },
+        "model": "auth.permission",
+        "pk": 17
+    },
+    {
+        "fields": {
+            "codename": "delete_session",
+            "content_type": 6,
+            "name": "Can delete session"
+        },
+        "model": "auth.permission",
+        "pk": 18
+    },
+    {
+        "fields": {
+            "codename": "add_area",
+            "content_type": 7,
+            "name": "Can add area"
+        },
+        "model": "auth.permission",
+        "pk": 19
+    },
+    {
+        "fields": {
+            "codename": "change_area",
+            "content_type": 7,
+            "name": "Can change area"
+        },
+        "model": "auth.permission",
+        "pk": 20
+    },
+    {
+        "fields": {
+            "codename": "delete_area",
+            "content_type": 7,
+            "name": "Can delete area"
+        },
+        "model": "auth.permission",
+        "pk": 21
+    },
+    {
+        "fields": {
+            "codename": "add_employee",
+            "content_type": 8,
+            "name": "Can add employee"
+        },
+        "model": "auth.permission",
+        "pk": 22
+    },
+    {
+        "fields": {
+            "codename": "change_employee",
+            "content_type": 8,
+            "name": "Can change employee"
+        },
+        "model": "auth.permission",
+        "pk": 23
+    },
+    {
+        "fields": {
+            "codename": "delete_employee",
+            "content_type": 8,
+            "name": "Can delete employee"
+        },
+        "model": "auth.permission",
+        "pk": 24
+    },
+    {
+        "fields": {
+            "codename": "add_project",
+            "content_type": 9,
+            "name": "Can add project"
+        },
+        "model": "auth.permission",
+        "pk": 25
+    },
+    {
+        "fields": {
+            "codename": "change_project",
+            "content_type": 9,
+            "name": "Can change project"
+        },
+        "model": "auth.permission",
+        "pk": 26
+    },
+    {
+        "fields": {
+            "codename": "delete_project",
+            "content_type": 9,
+            "name": "Can delete project"
+        },
+        "model": "auth.permission",
+        "pk": 27
+    },
+    {
+        "fields": {
+            "codename": "add_allocation",
+            "content_type": 10,
+            "name": "Can add allocation"
+        },
+        "model": "auth.permission",
+        "pk": 28
+    },
+    {
+        "fields": {
+            "codename": "change_allocation",
+            "content_type": 10,
+            "name": "Can change allocation"
+        },
+        "model": "auth.permission",
+        "pk": 29
+    },
+    {
+        "fields": {
+            "codename": "delete_allocation",
+            "content_type": 10,
+            "name": "Can delete allocation"
+        },
+        "model": "auth.permission",
+        "pk": 30
+    },
+    {
+        "fields": {
+            "codename": "add_role",
+            "content_type": 11,
+            "name": "Can add role"
+        },
+        "model": "auth.permission",
+        "pk": 31
+    },
+    {
+        "fields": {
+            "codename": "change_role",
+            "content_type": 11,
+            "name": "Can change role"
+        },
+        "model": "auth.permission",
+        "pk": 32
+    },
+    {
+        "fields": {
+            "codename": "delete_role",
+            "content_type": 11,
+            "name": "Can delete role"
+        },
+        "model": "auth.permission",
+        "pk": 33
+    },
+    {
+        "fields": {
+            "codename": "add_client",
+            "content_type": 12,
+            "name": "Can add client"
+        },
+        "model": "auth.permission",
+        "pk": 34
+    },
+    {
+        "fields": {
+            "codename": "change_client",
+            "content_type": 12,
+            "name": "Can change client"
+        },
+        "model": "auth.permission",
+        "pk": 35
+    },
+    {
+        "fields": {
+            "codename": "delete_client",
+            "content_type": 12,
+            "name": "Can delete client"
+        },
+        "model": "auth.permission",
+        "pk": 36
+    },
+    {
+        "fields": {
+            "date_joined": "2016-04-20T15:24:50Z",
+            "email": "mrosati@h-art.com",
+            "first_name": "Matteo",
+            "groups": [],
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "last_login": "2016-04-21T19:02:48.392Z",
+            "last_name": "Rosati",
+            "password": "pbkdf2_sha256$24000$XpWRRlYFG9LX$89W5kntqXLEipNP2Xzt8dCKqFk3fvx1aEJ2+7tFjzn4=",
+            "user_permissions": [],
+            "username": "admin"
+        },
+        "model": "auth.user",
+        "pk": 1
+    }
+]

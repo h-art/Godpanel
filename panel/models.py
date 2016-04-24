@@ -25,20 +25,26 @@ class Client(models.Model):
         return self.name
 
 class Employee(models.Model):
-    full_name = models.CharField(max_length=80)
+    first_name = models.CharField(max_length=80, default='')
+    last_name = models.CharField(max_length=80, default='')
     email = models.EmailField()
     area = models.ForeignKey('Area', null=True)
     role = models.ForeignKey('Role', null=True)
 
     def __unicode__(self):
-        return self.email
+        return ' - '.join([self.email,
+            ' '.join([self.first_name, self.last_name])])
+
+    class Meta:
+        # this will make ordering by last name default *always*
+        ordering = ['last_name']
 
 class Project(models.Model):
     name = models.CharField(max_length=50)
     client = models.ForeignKey('Client', null=True)
 
     def __unicode__(self):
-        return self.name
+        return ' - '.join([self.client.name, self.name])
 
 class Allocation(models.Model):
     ALLOCATION = 'allocation'
