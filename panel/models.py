@@ -12,16 +12,25 @@ class Area(models.Model):
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
 class Role(models.Model):
     name = models.CharField(max_length=25)
 
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
 class Client(models.Model):
     name = models.CharField(max_length=25)
 
     def __unicode__(self):
+        return self.name
+
+    def __str__(self):
         return self.name
 
 class Employee(models.Model):
@@ -35,6 +44,10 @@ class Employee(models.Model):
         return ' - '.join([self.email,
             ' '.join([self.first_name, self.last_name])])
 
+    def __str__(self):
+        return ' - '.join([self.email,
+            ' '.join([self.first_name, self.last_name])])
+
     class Meta:
         # this will make ordering by last name default *always*
         ordering = ['last_name']
@@ -44,6 +57,9 @@ class Project(models.Model):
     client = models.ForeignKey('Client', null=True)
 
     def __unicode__(self):
+        return ' - '.join([self.client.name, self.name])
+
+    def __str__(self):
         return ' - '.join([self.client.name, self.name])
 
 class Allocation(models.Model):
