@@ -1,11 +1,7 @@
 appnope==0.1.0
-boto==2.38.0
 decorator==4.0.6
-dj-database-url==0.3.0
 Django==1.9.5
 django-extensions==1.6.1
-django-storages==1.1.8
-django-taggit==0.17.6
 ecdsa==0.13
 Fabric==1.11.1
 gnureadline==6.3.3
