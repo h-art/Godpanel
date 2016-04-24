@@ -1,9 +1,5 @@
 from __future__ import unicode_literals
-from django.utils.translation import ugettext as _
-from django.utils import timezone
-
 from django.db import models
-from datetime import datetime
 
 
 class Area(models.Model):
@@ -15,6 +11,7 @@ class Area(models.Model):
     def __str__(self):
         return self.name
 
+
 class Role(models.Model):
     name = models.CharField(max_length=25)
 
@@ -23,6 +20,7 @@ class Role(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Client(models.Model):
     name = models.CharField(max_length=25)
@@ -33,6 +31,7 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
+
 class Employee(models.Model):
     first_name = models.CharField(max_length=80, default='')
     last_name = models.CharField(max_length=80, default='')
@@ -42,15 +41,16 @@ class Employee(models.Model):
 
     def __unicode__(self):
         return ' - '.join([self.email,
-            ' '.join([self.first_name, self.last_name])])
+                           ' '.join((self.first_name, self.last_name))])
 
     def __str__(self):
         return ' - '.join([self.email,
-            ' '.join([self.first_name, self.last_name])])
+                           ' '.join((self.first_name, self.last_name))])
 
     class Meta:
         # this will make ordering by last name default *always*
         ordering = ['last_name']
+
 
 class Project(models.Model):
     name = models.CharField(max_length=50)
@@ -61,6 +61,7 @@ class Project(models.Model):
 
     def __str__(self):
         return ' - '.join([self.client.name, self.name])
+
 
 class Allocation(models.Model):
     ALLOCATION = 'allocation'
@@ -80,4 +81,5 @@ class Allocation(models.Model):
     saturation = models.IntegerField(default=100)
     note = models.TextField(null=True, blank=True)
     allocation_type = models.CharField(max_length=50,
-        choices=ALLOCATION_TYPES, null=True, default=ALLOCATION)
+                                       choices=ALLOCATION_TYPES,
+                                       null=True, default=ALLOCATION)
