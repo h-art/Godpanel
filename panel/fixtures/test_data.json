@@ -30,6 +30,30 @@
     },
     {
         "fields": {
+            "first_name": "Matteo",
+            "last_name": "Rosati",
+            "email": "mrosati@h-art.com",
+            "area": 1,
+            "role": 1
+        },
+        "model": "panel.employee",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "start": "2016-04-20",
+            "end": "2016-04-23",
+            "employee": 1,
+            "project": 1,
+            "saturation": 100,
+            "note": "",
+            "allocation_type": "allocation"
+        },
+        "model": "panel.allocation",
+        "pk": 1
+    },
+    {
+        "fields": {
             "date_joined": "2016-04-23T15:55:27.874Z",
             "email": "test@test.com",
             "first_name": "",
