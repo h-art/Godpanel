@@ -2,7 +2,7 @@ import json
 from django.test import TestCase
 from django.test import Client
 from django.core.urlresolvers import reverse
-from .constants import *
+from panel.tests.constants import *
 
 
 class ApiTestCase(TestCase):
