@@ -7,3 +7,4 @@ ALLOCATIONS_RESPONSE_FIELDS = {'id', 'resourceId', 'start', 'end',
                                'allocation_type', 'note'}
 HTTP_OK = 200
 HTTP_FORBIDEN = 403
+HTTP_REDIRECT = 302
