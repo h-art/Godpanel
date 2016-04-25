@@ -18,7 +18,7 @@ from django.contrib import admin
 import panel.views
 
 urlpatterns = [
-    url(r'^$', panel.views.index),
+    url(r'^$', panel.views.index, name='frontpage'),
     url(r'^admin/', admin.site.urls),
     url(r'^employees/', panel.views.employees, name='employees'),
     url(r'^allocations/', panel.views.allocations, name='allocations'),
