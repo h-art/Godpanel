@@ -1,13 +1,11 @@
 import json
-from django.test import TestCase
+from panel.tests.godpanel_test_case import GodpanelTestCase
 from django.test import Client
 from django.core.urlresolvers import reverse
 from panel.tests.constants import *
 
 
-class ApiTestCase(TestCase):
-    fixtures = TEST_FIXTURES
-
+class ApiTestCase(GodpanelTestCase):
     def setUp(self):
         self.client = Client()
         self.client.login(username=TEST_USERNAME, password=TEST_PASSWORD)

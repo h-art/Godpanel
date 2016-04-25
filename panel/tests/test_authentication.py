@@ -1,12 +1,10 @@
-from django.test import TestCase
+from panel.tests.godpanel_test_case import GodpanelTestCase
 from django.test import Client
 from django.core.urlresolvers import reverse
 from panel.tests.constants import *
 
 
-class AuthTestCase(TestCase):
-    fixtures = TEST_FIXTURES
-
+class AuthTestCase(GodpanelTestCase):
     def setUp(self):
         self.client = Client()
 
