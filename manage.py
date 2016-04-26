@@ -6,7 +6,7 @@ if __name__ == "__main__":
     env = os.getenv('DJANGO_ENV')
 
     if env is None:
-      env = 'local'
+        env = 'local'
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", '.'.join(["hart.settings", env]))
 

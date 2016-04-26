@@ -1,8 +1,10 @@
 import json
-from godpanel.tests.godpanel_test_case import GodpanelTestCase
-from django.test import Client
+
 from django.core.urlresolvers import reverse
+from django.test import Client
+
 from godpanel.tests.constants import *
+from godpanel.tests.godpanel_test_case import GodpanelTestCase
 
 
 class ApiTestCase(GodpanelTestCase):

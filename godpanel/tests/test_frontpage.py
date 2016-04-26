@@ -1,8 +1,10 @@
 from urllib.parse import urlparse
-from godpanel.tests.godpanel_test_case import GodpanelTestCase
-from django.test import Client
+
 from django.core.urlresolvers import reverse
+from django.test import Client
+
 from godpanel.tests.constants import *
+from godpanel.tests.godpanel_test_case import GodpanelTestCase
 
 
 class AuthTestCase(GodpanelTestCase):
