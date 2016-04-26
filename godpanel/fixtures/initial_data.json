@@ -123,56 +123,56 @@
         "fields": {
             "name": "DEV"
         },
-        "model": "panel.area",
+        "model": "godpanel.area",
         "pk": 1
     },
     {
         "fields": {
             "name": "Frontend"
         },
-        "model": "panel.role",
+        "model": "godpanel.role",
         "pk": 1
     },
     {
         "fields": {
             "name": "Backend"
         },
-        "model": "panel.role",
+        "model": "godpanel.role",
         "pk": 2
     },
     {
         "fields": {
             "name": "Full stack"
         },
-        "model": "panel.role",
+        "model": "godpanel.role",
         "pk": 3
     },
     {
         "fields": {
             "name": "Unipd"
         },
-        "model": "panel.client",
+        "model": "godpanel.client",
         "pk": 1
     },
     {
         "fields": {
             "name": "Kinder"
         },
-        "model": "panel.client",
+        "model": "godpanel.client",
         "pk": 2
     },
     {
         "fields": {
             "name": "Molteni"
         },
-        "model": "panel.client",
+        "model": "godpanel.client",
         "pk": 3
     },
     {
         "fields": {
             "name": "AKQA"
         },
-        "model": "panel.client",
+        "model": "godpanel.client",
         "pk": 4
     },
     {
@@ -183,7 +183,7 @@
             "last_name": "Rosati",
             "role": 3
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 1
     },
     {
@@ -194,7 +194,7 @@
             "last_name": "Pavan",
             "role": 2
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 2
     },
     {
@@ -205,7 +205,7 @@
             "last_name": "Rivello",
             "role": 2
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 3
     },
     {
@@ -216,7 +216,7 @@
             "last_name": "Ruggeri",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 4
     },
     {
@@ -227,7 +227,7 @@
             "last_name": "Antonello",
             "role": 2
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 5
     },
     {
@@ -238,7 +238,7 @@
             "last_name": "Restello",
             "role": 2
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 6
     },
     {
@@ -249,7 +249,7 @@
             "last_name": "Chang",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 7
     },
     {
@@ -260,7 +260,7 @@
             "last_name": "Collet",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 8
     },
     {
@@ -271,7 +271,7 @@
             "last_name": "Fiaschini",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 9
     },
     {
@@ -282,7 +282,7 @@
             "last_name": "Calderan",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 10
     },
     {
@@ -293,7 +293,7 @@
             "last_name": "Codello",
             "role": 2
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 11
     },
     {
@@ -304,7 +304,7 @@
             "last_name": "Marchesini",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 12
     },
     {
@@ -315,7 +315,7 @@
             "last_name": "Sors",
             "role": 1
         },
-        "model": "panel.employee",
+        "model": "godpanel.employee",
         "pk": 13
     },
     {
@@ -323,7 +323,7 @@
             "client": 3,
             "name": "Contract division"
         },
-        "model": "panel.project",
+        "model": "godpanel.project",
         "pk": 3
     },
     {
@@ -331,7 +331,7 @@
             "client": 2,
             "name": "Lasciati ispirare"
         },
-        "model": "panel.project",
+        "model": "godpanel.project",
         "pk": 7
     },
     {
@@ -339,7 +339,7 @@
             "client": 1,
             "name": "Itinerari"
         },
-        "model": "panel.project",
+        "model": "godpanel.project",
         "pk": 8
     },
     {
@@ -347,7 +347,7 @@
             "client": 4,
             "name": "Herm\u00e8s Apollo"
         },
-        "model": "panel.project",
+        "model": "godpanel.project",
         "pk": 9
     },
     {
@@ -360,7 +360,7 @@
             "saturation": 100,
             "start": "2016-05-02"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 8
     },
     {
@@ -373,7 +373,7 @@
             "saturation": 100,
             "start": "2016-05-02"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 9
     },
     {
@@ -386,7 +386,7 @@
             "saturation": 100,
             "start": "2016-05-02"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 10
     },
     {
@@ -399,7 +399,7 @@
             "saturation": 100,
             "start": "2016-05-05"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 11
     },
     {
@@ -412,7 +412,7 @@
             "saturation": 25,
             "start": "2016-04-26"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 12
     },
     {
@@ -425,7 +425,7 @@
             "saturation": 100,
             "start": "2016-04-21"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 14
     },
     {
@@ -438,7 +438,7 @@
             "saturation": 100,
             "start": "2016-05-02"
         },
-        "model": "panel.allocation",
+        "model": "godpanel.allocation",
         "pk": 15
     },
     {

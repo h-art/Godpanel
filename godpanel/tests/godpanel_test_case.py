@@ -1,5 +1,5 @@
 from django.test import TestCase
-from panel.tests.constants import *
+from godpanel.tests.constants import *
 
 
 class GodpanelTestCase(TestCase):

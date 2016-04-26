@@ -16,6 +16,6 @@ env = os.getenv('DJANGO_ENV')
 if env is None:
   env = 'local'
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", '.'.join(["godpanel.settings", env]))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", '.'.join(["hart.settings", env]))
 
 application = get_wsgi_application()

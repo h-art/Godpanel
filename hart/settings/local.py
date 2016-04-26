@@ -1,7 +1,7 @@
-from from godpanel.settings.base import *
+from hart.settings.base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret key'
+SECRET_KEY = '699-1jeezr%^!qmn3!s33t@&=p4@v+5!2hql6q%^99@ph*n+(3'
 
 DEBUG = True
 
@@ -11,9 +11,9 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbaname',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpass',
+        'NAME': 'hart',
+        'USER': 'mrosati',
+        'PASSWORD': 'Qu3enai5',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

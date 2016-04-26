@@ -2,4 +2,4 @@
 *.pyc
 *.pyo
 /static
-godpanel/settings/local.py
+/hart/settings/local.py

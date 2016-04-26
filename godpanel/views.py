@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseForbidden, JsonResponse
-from panel.models import Employee, Allocation
+from godpanel.models import Employee, Allocation
 from django.core.urlresolvers import reverse
 from datetime import datetime
 
@@ -9,7 +9,7 @@ def index(request):
     if request.user.is_authenticated():
         return render(request, 'index.html', {})
     else:
-        return redirect('%s%s' % (reverse('admin:login'), '?next=/'))
+        return redirect('%s%s' % (reverse('admin:login'), '?next=%s' % (reverse('godpanel.frontpage'))))
 
 
 def employees(request):

@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'panel',
+    'godpanel',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -49,7 +49,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'godpanel.urls'
+ROOT_URLCONF = 'hart.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'godpanel.wsgi.application'
+WSGI_APPLICATION = 'hart.wsgi.application'
 
 
 # Password validation

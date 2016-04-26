@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('panel', '0003_project'),
+        ('godpanel', '0003_project'),
     ]
 
     operations = [
@@ -19,8 +19,8 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('start', models.DateTimeField()),
                 ('end', models.DateTimeField()),
-                ('employee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='panel.Employee')),
-                ('project', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='panel.Project')),
+                ('employee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='godpanel.Employee')),
+                ('project', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='godpanel.Project')),
             ],
         ),
     ]

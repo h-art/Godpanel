@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('panel', '0010_auto_20160421_1916'),
+        ('godpanel', '0010_auto_20160421_1916'),
     ]
 
     operations = [

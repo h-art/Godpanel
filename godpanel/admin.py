@@ -1,5 +1,5 @@
 from django.contrib import admin
-from panel.models import Employee, Area, Role, Client, Project, Allocation
+from godpanel.models import Employee, Area, Role, Client, Project, Allocation
 
 
 admin.site.site_title = 'Godpanel'

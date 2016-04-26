@@ -1,8 +1,8 @@
 import json
-from panel.tests.godpanel_test_case import GodpanelTestCase
+from godpanel.tests.godpanel_test_case import GodpanelTestCase
 from django.test import Client
 from django.core.urlresolvers import reverse
-from panel.tests.constants import *
+from godpanel.tests.constants import *
 
 
 class ApiTestCase(GodpanelTestCase):
@@ -11,7 +11,7 @@ class ApiTestCase(GodpanelTestCase):
         self.client.login(username=TEST_USERNAME, password=TEST_PASSWORD)
 
     def test_it_fetches_employees(self):
-        employees = self.client.get(reverse('employees'))
+        employees = self.client.get(reverse('godpanel.employees'))
         json_response = json.loads(employees.content.decode())
 
         self.assertEqual(1, len(json_response))
@@ -21,7 +21,7 @@ class ApiTestCase(GodpanelTestCase):
         self.assertTrue(EMPLOYEES_RESPONSE_FIELDS == set(employee.keys()))
 
     def test_it_fetches_allocations(self):
-        allocations = self.client.get(reverse('allocations'))
+        allocations = self.client.get(reverse('godpanel.allocations'))
         json_response = json.loads(allocations.content.decode())
 
         self.assertEqual(1, len(json_response))
