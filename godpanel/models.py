@@ -5,9 +5,6 @@ from django.db import models
 class Area(models.Model):
     name = models.CharField(max_length=25)
 
-    def __unicode__(self):
-        return self.name
-
     def __str__(self):
         return self.name
 
@@ -15,18 +12,12 @@ class Area(models.Model):
 class Role(models.Model):
     name = models.CharField(max_length=25)
 
-    def __unicode__(self):
-        return self.name
-
     def __str__(self):
         return self.name
 
 
 class Client(models.Model):
     name = models.CharField(max_length=25)
-
-    def __unicode__(self):
-        return self.name
 
     def __str__(self):
         return self.name
@@ -38,10 +29,6 @@ class Employee(models.Model):
     email = models.EmailField()
     area = models.ForeignKey('Area', null=True)
     role = models.ForeignKey('Role', null=True)
-
-    def __unicode__(self):
-        return ' - '.join([self.email,
-                           ' '.join((self.first_name, self.last_name))])
 
     def __str__(self):
         return ' - '.join([self.email,
@@ -55,9 +42,6 @@ class Employee(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=50)
     client = models.ForeignKey('Client', null=True)
-
-    def __unicode__(self):
-        return ' - '.join([self.client.name, self.name])
 
     def __str__(self):
         return ' - '.join([self.client.name, self.name])
@@ -82,4 +66,5 @@ class Allocation(models.Model):
     note = models.TextField(null=True, blank=True)
     allocation_type = models.CharField(max_length=50,
                                        choices=ALLOCATION_TYPES,
-                                       null=True, default=ALLOCATION)
+                                       null=True,
+                                       default=ALLOCATION)
