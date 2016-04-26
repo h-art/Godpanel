@@ -1,7 +1,7 @@
 from hart.settings.base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret key'
+SECRET_KEY = 'TravisSupersecretKey!'
 
 DEBUG = True
 
@@ -11,9 +11,9 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbaname',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpass',
+        'NAME': 'travis_ci_test',
+        'USER': 'postgres',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
