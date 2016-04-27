@@ -4,3 +4,4 @@
 /static
 /hart/settings/local.py
 /venv
+.coverage
