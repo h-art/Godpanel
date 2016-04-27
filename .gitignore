@@ -3,3 +3,4 @@
 *.pyo
 /static
 /hart/settings/local.py
+/venv
