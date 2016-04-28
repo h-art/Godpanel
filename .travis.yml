@@ -17,7 +17,7 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
-  - coverage run --source godpanel --omit "godpanel/migrations/*.py" ./manage.py test
+  - coverage run --source godpanel --source godpanel ./manage.py test
 
 after_success:
   - codecov
