@@ -16,6 +16,7 @@ before_script:
 
 script:
   - coverage run --source godpanel --omit "godpanel/migrations/*.py" ./manage.py test
+  - coverage xml
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
