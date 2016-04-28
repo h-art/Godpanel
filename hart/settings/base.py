@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'godpanel',
+    'booking',
 ]
 
 MIDDLEWARE_CLASSES = [
