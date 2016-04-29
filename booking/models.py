@@ -2,10 +2,6 @@ from django.db import models
 from django.utils import timezone
 
 
-
-
-
-
 class Room(models.Model):
     OFFICES = (
         ("Treviso", 'Treviso'),
@@ -14,13 +10,13 @@ class Room(models.Model):
     name = models.CharField(max_length=200)
     seats = models.IntegerField()
     office = models.CharField(max_length=20,
-                                      choices=OFFICES,
-                                      default="Treviso", blank=False)
+                              choices=OFFICES,
+                              default="Treviso", blank=False)
     note = models.TextField()
     created_date = models.DateTimeField(
-            default=timezone.now)
+        default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+        blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -29,13 +25,16 @@ class Room(models.Model):
     def __str__(self):
         return self.name
 
+
 class Applicant(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField()
     phone = models.CharField(max_length=100)
+
     def __str__(self):
         return self.last_name + " " + self.first_name
+
 
 class Booking(models.Model):
     title = models.CharField(max_length=250, null=False)
@@ -47,8 +46,7 @@ class Booking(models.Model):
     note = models.TextField()
 
     def get_description(self):
-        return self.room.name + " (da " + self.request_by.last_name+")"
+        return self.room.name + " (da " + self.request_by.last_name + ")"
 
     def __str__(self):
         return self.get_description()
-
