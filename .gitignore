@@ -3,6 +3,13 @@
 *.pyo
 /static
 /hart/settings/local.py
+
+# for virtual env
 /venv
+
+# for CI
 .coverage
 coverage.xml
+
+# for local db
+/db.sqlite3
