@@ -3,7 +3,9 @@ language: python
 python:
   - "3.5"
 
-install: "pip install -r requirements.txt"
+install:
+  - pip install -r requirements.txt
+  - pip install codecov
 
 env:
   - DJANGO_ENV=travis
@@ -15,4 +17,7 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
-  - python manage.py test
+  - coverage run --source godpanel --source godpanel ./manage.py test
+
+after_success:
+  - codecov
