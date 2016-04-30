@@ -3,6 +3,9 @@
 *.pyo
 /static
 /hart/settings/local.py
+/hart/settings/development.py
+/hart/settings/staging.py
+/hart/settings/production.py
 /venv
 .coverage
 coverage.xml
