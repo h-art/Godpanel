@@ -22,3 +22,7 @@ script:
 
 after_success:
   - codecov
+  - curl --data "Travis CI build successful on $(date) - (https://travis-ci.org/h-art/Godpanel/jobs/${TRAVIS_JOB_ID})" $'https://h-art.slack.com/services/hooks/slackbot?token=${SLACK_TOKEN}&channel=${SLACK_CHANNEL}'
+
+after_failure:
+  - curl --data "Travis CI build failed on $(date) - (https://travis-ci.org/h-art/Godpanel/jobs/${TRAVIS_JOB_ID})" $'https://h-art.slack.com/services/hooks/slackbot?token=${SLACK_TOKEN}&channel=${SLACK_CHANNEL}'
