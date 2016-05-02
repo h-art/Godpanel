@@ -1,9 +1,12 @@
 from django.conf.urls import url
-from godpanel import views
 
+from godpanel.views.allocations_view import AllocationsView
+from godpanel.views.employees_view import EmployeesView
+from godpanel.views.front_view import FrontView
 
 urlpatterns = [
-    url(r'^$', views.index, name='godpanel.frontpage'),
-    url(r'^employees/', views.employees, name='godpanel.employees'),
-    url(r'^allocations/', views.allocations, name='godpanel.allocations'),
+    url(r'^$', FrontView.as_view(), name='godpanel.frontpage'),
+    url(r'^employees/', EmployeesView.as_view(), name='godpanel.employees'),
+    url(r'^allocations/', AllocationsView.as_view(), name='godpanel.allocations'),
+    url(r'^prova/', EmployeesView.as_view())
 ]
