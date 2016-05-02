@@ -1,6 +1,7 @@
 .idea
 *.pyc
 *.pyo
+.config.ini
 /static
 /hart/settings/local.py
 /hart/settings/development.py
