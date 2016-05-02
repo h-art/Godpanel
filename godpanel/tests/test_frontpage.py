@@ -7,7 +7,7 @@ from godpanel.tests.constants import *
 from godpanel.tests.godpanel_test_case import GodpanelTestCase
 
 
-class AuthTestCase(GodpanelTestCase):
+class FrontpageTestCase(GodpanelTestCase):
     def setUp(self):
         self.client = Client()
 
