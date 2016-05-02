@@ -1,11 +1,14 @@
 #!/usr/bin/env python
-import os, sys, configparser
+import os
+import sys
+import configparser
 
 if __name__ == "__main__":
     parser = configparser.ConfigParser()
 
     try:
-        parser.read_file(open('.config.ini'))
+        filename = os.path.realpath(os.path.join(os.path.dirname(__file__), '.config.ini'))
+        parser.read_file(open(filename))
         django_settings_module = parser.get('wsgi', 'django_settings_module')
     except FileNotFoundError:
         django_settings_module = 'hart.settings.local'
