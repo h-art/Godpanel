@@ -7,8 +7,8 @@ $(function () {
     resourceLabelText: 'Risorse',
     defaultView: 'timelineMonth',
     defaultDate: new Date(),
-    events: 'allocations',
-    resources: 'employees',
+    events: 'allocations/',
+    resources: 'employees/',
     weekends: false,
     lang: 'it',
     customButtons: {
