@@ -9,6 +9,17 @@ from godpanel.models import Allocation
 
 class AllocationsView(View):
     def get(self, request):
+        start = request.GET.get('start')
+        end = request.GET.get('end')
+
+        if None in [start, end]:
+            response = JsonResponse({'message': 'start and end parameters are required'})
+            response.status_code = 400
+            return response
+
+        start_date = datetime.strptime(start, '%Y-%m-%d')
+        end_date = datetime.strptime(end, '%Y-%m-%d')
+
         response = [{
             'id': allocation.id,
             'resourceId': allocation.employee.id,
@@ -23,7 +34,7 @@ class AllocationsView(View):
             'client': allocation.project.client.name,
             'allocation_type': allocation.allocation_type,
             'note': allocation.note
-        } for allocation in Allocation.objects.all()]
+        } for allocation in Allocation.objects.filter(start__gte=start_date, end__lte=end_date)]
 
         if request.user.is_authenticated():
             return JsonResponse(response, safe=False)

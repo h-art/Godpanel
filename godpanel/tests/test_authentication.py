@@ -14,7 +14,10 @@ class AuthTestCase(GodpanelTestCase):
         self.assertEqual(HTTP_FORBIDEN, response.status_code)
 
     def test_cannot_get_allocations_if_not_authenticated(self):
-        response = self.client.get(reverse('godpanel.allocations'))
+        response = self.client.get(reverse('godpanel.allocations'), {
+            'start': '2016-04-20',
+            'end': '2016-04-23'
+        })
         self.assertEqual(HTTP_FORBIDEN, response.status_code)
 
     def test_can_authenticate_with_fixture_data_and_use_api(self):
