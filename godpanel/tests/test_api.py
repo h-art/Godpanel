@@ -46,6 +46,5 @@ class ApiTestCase(GodpanelTestCase):
 
     def test_start_and_end_parameters_are_required(self):
         allocations = self.client.get(reverse('godpanel.allocations'))
-        json_response = json.loads(allocations.content.decode())
 
         self.assertEqual(400, allocations.status_code)
