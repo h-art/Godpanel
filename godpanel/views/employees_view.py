@@ -6,7 +6,7 @@ from godpanel.models import Employee
 
 
 class EmployeesView(View):
-    def get(request):
+    def get(self, request):
         response = [{
             'id': employee.id,
             'title': ' '.join([employee.first_name, employee.last_name]),
