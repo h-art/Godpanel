@@ -41,7 +41,7 @@
     },
     {
         "fields": {
-            "start": "2016-04-20",
+            "start": "2016-03-10",
             "end": "2016-04-23",
             "employee": 1,
             "project": 1,
@@ -51,6 +51,32 @@
         },
         "model": "godpanel.allocation",
         "pk": 1
+    },
+    {
+        "fields": {
+            "start": "2016-04-01",
+            "end": "2016-04-29",
+            "employee": 1,
+            "project": 1,
+            "saturation": 100,
+            "note": "",
+            "allocation_type": "allocation"
+        },
+        "model": "godpanel.allocation",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "start": "2016-04-20",
+            "end": "2016-05-10",
+            "employee": 1,
+            "project": 1,
+            "saturation": 100,
+            "note": "",
+            "allocation_type": "allocation"
+        },
+        "model": "godpanel.allocation",
+        "pk": 3
     },
     {
         "fields": {

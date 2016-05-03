@@ -35,7 +35,7 @@ class AllocationsView(View):
             'client': allocation.project.client.name,
             'allocation_type': allocation.allocation_type,
             'note': allocation.note
-        } for allocation in Allocation.objects.filter(start__gte=start_date, end__lte=end_date)]
+        } for allocation in Allocation.objects.filter(end__gte=start_date, start__lte=end_date)]
 
         if request.user.is_authenticated():
             return JsonResponse(response, safe=False)
