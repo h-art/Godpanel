@@ -24,15 +24,16 @@ class ApiTestCase(GodpanelTestCase):
 
     def test_it_fetches_allocations(self):
         allocations = self.client.get(reverse('godpanel.allocations'), {
-            'start': '2016-04-01',
-            'end': '2016-04-30'
+            'start': '2016-05-02',
+            'end': '2016-06-01'
         })
         json_response = json.loads(allocations.content.decode())
 
-        self.assertEqual(3, len(json_response))
+        self.assertEqual(2, len(json_response))
 
         allocation = json_response.pop()
 
+        # assert all the json keys in the response
         self.assertTrue(ALLOCATIONS_RESPONSE_FIELDS == set(allocation.keys()))
 
     def test_it_fetches_empty_allocations_if_dates_out_of_range(self):
@@ -45,6 +46,7 @@ class ApiTestCase(GodpanelTestCase):
         self.assertEqual(0, len(json_response))
 
     def test_start_and_end_parameters_are_required(self):
+        # note: no query string params in get request
         allocations = self.client.get(reverse('godpanel.allocations'))
 
         self.assertEqual(400, allocations.status_code)
