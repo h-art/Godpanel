@@ -11,6 +11,11 @@ class FrontpageTestCase(GodpanelTestCase):
     def setUp(self):
         self.client = Client()
 
+    def test_is_redirected_to_godpanel_if_get_root_path(self):
+        root = self.client.get(reverse('root'))
+        self.assertEqual(HTTP_REDIRECT, root.status_code)
+        self.assertEqual(root.url, reverse('godpanel.frontpage'))
+
     def test_is_redirected_to_homepage_if_not_authenticated(self):
         frontpage = self.client.get(reverse('godpanel.frontpage'))
         self.assertEqual(HTTP_REDIRECT, frontpage.status_code)
