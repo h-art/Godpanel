@@ -16,6 +16,10 @@ def test():
     run("cd $PROJECT_DIR && python manage.py test")
 
 
+def restart_app():
+    run("cd $PROJECT_DIR && touch hart/$WSGI_SCRIPT")
+
 def deploy():
     execute(git_pull)
     execute(collectstatic)
+    execute(restart_app)
