@@ -5,6 +5,7 @@ from django.test import Client
 
 from godpanel.tests.constants import *
 from godpanel.tests.godpanel_test_case import GodpanelTestCase
+from godpanel.models import Allocation
 
 
 class ApiTestCase(GodpanelTestCase):
@@ -35,6 +36,31 @@ class ApiTestCase(GodpanelTestCase):
 
         # assert all the json keys in the response
         self.assertTrue(ALLOCATIONS_RESPONSE_FIELDS == set(allocation.keys()))
+
+    def test_it_can_update_allocations(self):
+        # data for api test request
+        id = 1
+        start = '2016-01-01'
+        end = '2016-01-10'
+
+        request_data = {
+            'id': id,
+            'start': start,
+            'end': end
+        }
+        content_type = 'application/json'
+
+        # verify response from api
+        response = self.client.put(reverse('godpanel.allocations'), data=json.dumps(request_data), content_type=content_type)
+        response_object = json.loads(response.content.decode('utf-8'))
+
+        self.assertEqual(response_object['message'], 'resource %d updated' % (id))
+
+        # fetch object from db and verify it's been updated
+        allocation = Allocation.objects.get(pk=id)
+
+        self.assertEqual(allocation.start.isoformat(), start)
+        self.assertEqual(allocation.end.isoformat(), end)
 
     def test_it_fetches_empty_allocations_if_dates_out_of_range(self):
         allocations = self.client.get(reverse('godpanel.allocations'), {
