@@ -1,6 +1,7 @@
+import json
 from datetime import datetime
 
-from django.http import HttpResponseForbidden
+from django.http import HttpResponse, HttpResponseForbidden
 from django.http import JsonResponse
 from django.views.generic import View
 
@@ -41,3 +42,21 @@ class AllocationsView(View):
             return JsonResponse(response, safe=False)
         else:
             return HttpResponseForbidden('You must authenticate')
+
+    def put(self, request):
+        request_object = json.loads(request.body.decode('utf-8'))
+        allocation = Allocation.objects.get(pk=request_object['id'])
+
+        allocation.start = request_object['start']
+        allocation.end = request_object['end']
+
+        try:
+            allocation.save()
+            response = JsonResponse({'message': 'resource %d updated' % (request_object['id'])})
+        except Exception as e:
+            response = JsonResponse({
+                'message': 'error updating resource with id %d' % (request_object['id']),
+                'stack_trace': str(e)
+            }, status=500)
+
+        return response
