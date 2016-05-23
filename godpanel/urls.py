@@ -8,5 +8,4 @@ urlpatterns = [
     url(r'^$', FrontView.as_view(), name='godpanel.frontpage'),
     url(r'^employees/', EmployeesView.as_view(), name='godpanel.employees'),
     url(r'^allocations/', AllocationsView.as_view(), name='godpanel.allocations'),
-    url(r'^prova/', EmployeesView.as_view())
 ]
