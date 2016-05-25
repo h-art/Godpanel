@@ -67,7 +67,7 @@ class AllocationsView(View):
             return JsonResponse(dict(form.errors), status=400)
 
         try:
-            allocation.save(force_update=True)
+            form.save()
             response = JsonResponse({'message': 'resource %d updated' % (int(request_object['id']))})
         except Exception as e:
             response = JsonResponse({
