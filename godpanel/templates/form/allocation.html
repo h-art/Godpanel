@@ -3,10 +3,37 @@
         <label class="control-label" for="{{ form.start.auto_id }}">{{ form.start.label }}</label>
         {{ form.start }}
     </div>
+
     <div class="form-group">
         <label class="control-label" for="{{ form.end.auto_id }}">{{ form.end.label }}</label>
         {{ form.end }}
     </div>
+
+    <div class="form-group">
+        <label class="control-label" for="{{ form.employee.auto_id }}">{{ form.employee.label }}</label>
+        {{ form.employee }}
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="{{ form.project.auto_id }}">{{ form.project.label }}</label>
+        {{ form.project }}
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="{{ form.saturation.auto_id }}">{{ form.saturation.label }}</label>
+        {{ form.saturation }}
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="{{ form.note.auto_id }}">{{ form.note.label }}</label>
+        {{ form.note }}
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="{{ form.allocation_type.auto_id }}">{{ form.allocation_type.label }}</label>
+        {{ form.allocation_type }}
+    </div>
+
     {% csrf_token %}
 
     <div>
