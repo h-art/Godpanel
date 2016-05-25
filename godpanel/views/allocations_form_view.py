@@ -1,10 +1,9 @@
-import datetime as dt
+import datetime
 
 from django import forms
 from django.forms import ModelForm
 from django.shortcuts import render
 from django.views.generic import View
-import datetime
 
 from godpanel.models import Allocation, Project, Employee
 
@@ -41,9 +40,11 @@ class AllocationsFormView(View):
             allocation = Allocation.objects.get(pk=request.GET['allocation'])
             form = AllocationForm(instance=allocation)
         elif 'new_allocation' in request.GET:
+            start = datetime.datetime.strptime(request.GET['start'], '%Y-%m-%d')
+
             form = AllocationForm(initial={
-                'start': datetime.datetime.today(),
-                'end': datetime.datetime.today() + dt.timedelta(days=1),
+                'start': start,
+                'end': start + datetime.timedelta(days=1),
                 'project': Project.objects.first().id,
                 'employee': Employee.objects.get(pk=int(request.GET['resource_id'])),
                 'saturation': 100
