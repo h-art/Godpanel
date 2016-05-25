@@ -61,7 +61,6 @@
 
   allocationModal.on('submit', '#allocation-form', function(e) {
     e.preventDefault();
-    return false;
 
     var data = $(this).serializeObject(),
         allocationId = allocationModal.attr('data-allocation-id');
@@ -69,6 +68,8 @@
     data.id = allocationId;
 
     updateEvent(data);
+
+    return false;
   });
 
   // handle what happens when the allocation modal is opened
@@ -79,10 +80,15 @@
     if (allocationId) {
       qsParams += 'allocation=' + allocationId;
     }
+    else {
+      qsParams += 'new_allocation&resource_id=';
+      qsParams += allocationModal.attr('data-resource-id');
+    }
 
     $(e.target).find('.modal-body').load('allocations/form/' + qsParams);
   }).on('hidden.bs.modal', function () {
     $(this).removeAttr('data-allocation-id');
+    $(this).removeAttr('data-resource-id');
     // refresh the calendar every time a modal is closed
     godpanel.fullCalendar('refetchEvents');
   });
@@ -114,6 +120,7 @@
     lang: 'it',
 
     dayClick: function (date, jsEvent, view, resourceObj) {
+      allocationModal.attr('data-resource-id', resourceObj.id);
       allocationModal.modal();
     },
 
@@ -148,6 +155,7 @@
           break;
       }
     },
+
     resourceRender: function (resourceObj, labelTds, bodyTds) {
       labelTds
         .find('.fc-cell-text')
