@@ -53,6 +53,24 @@
       // success, close the modal
       allocationModal.modal('hide');
     }).fail(function (data, textStatus, jqXHR) {
+      if (data.responseJSON) {
+        var allocationForm = $('#allocation-form');
+
+        // clear previous errors if any
+        allocationForm
+          .find('.form-group')
+          .each(function (i, el) {
+            $(el).removeClass('has-error')
+          });
+
+        // look for errors in response and set bootstrap class
+        for (key in data.responseJSON) {
+          allocationForm
+            .find('#id_' + key)
+            .parent()
+            .addClass('has-error');
+        }
+      }
       console.log(data, textStatus);
     });
   }
