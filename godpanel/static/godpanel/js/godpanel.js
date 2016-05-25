@@ -43,7 +43,7 @@
    */
   function updateEvent(data) {
     jQuery.ajax({
-      url: '/godpanel/allocations/',
+      url: 'allocations/',
       headers: { 'X-CSRFToken': getCookie('csrftoken') },
       data: JSON.stringify(data),
       dataType: 'json',
