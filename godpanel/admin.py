@@ -1,5 +1,5 @@
 from django.contrib import admin
-from godpanel.models import Employee, Area, Role, Client, Project, Allocation
+from godpanel.models import Employee, Area, Role, Client, Project, Allocation, ClosingDay
 
 
 admin.site.site_title = 'Godpanel'
@@ -20,9 +20,15 @@ class AllocationAdmin(admin.ModelAdmin):
     list_display = ('start', 'end', 'saturation', 'allocation_type', 'employee', 'project')
     ordering = ('-start',)
 
+
+class ClosingDayAdmin(admin.ModelAdmin):
+    list_display = ('date')
+
+
 admin.site.register(Area)
 admin.site.register(Role)
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(Client)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Allocation, AllocationAdmin)
+admin.site.register(ClosingDay)

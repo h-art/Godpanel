@@ -154,6 +154,15 @@
     weekends: false,
     lang: 'it',
 
+    dayRender: function (date, cell) {
+      // check closing days
+      for (var i = 0; i < closing_days.length; i++) {
+        if (date.format('YYYY-MM-DD') == closing_days[i]) {
+          $(cell).css('background', '#EEE');
+        }
+      }
+    },
+
     dayClick: function (date, jsEvent, view, resourceObj) {
       allocationModal.attr('data-resource-id', resourceObj.id);
       allocationModal.attr('data-start', date.format('YYYY-MM-DD'));

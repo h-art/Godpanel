@@ -2,6 +2,14 @@
 {% load staticfiles %}
 
 {% block content %}
+  <script>
+    var closing_days = [
+      {% for closing_day in closing_days %}
+        '{{ closing_day.date|date:"Y-m-d" }}',
+      {% endfor %}
+    ];
+  </script>
+
   <div class="row">
     <div class="col-md-12">
       <h1 id="title"><a href="/"><img id="logo" src="{% static 'godpanel/img/logo.svg' %}" alt=""></a></h1>

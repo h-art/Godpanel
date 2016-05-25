@@ -47,6 +47,13 @@ class Project(models.Model):
         return ' - '.join([self.client.name, self.name])
 
 
+class ClosingDay(models.Model):
+    date = models.DateField()
+
+    def __str__(self):
+        return self.date.strftime('%Y-%m-%d')
+
+
 class Allocation(models.Model):
     ALLOCATION = 'allocation'
     PRE_ALLOCATION = 'pre-allocation'
