@@ -41,14 +41,14 @@
    * @param  {object} event The event object
    * @return void
    */
-  function updateEvent(data) {
+  function updateEvent(data, method='put') {
     jQuery.ajax({
       url: 'allocations/',
       headers: { 'X-CSRFToken': getCookie('csrftoken') },
       data: JSON.stringify(data),
       dataType: 'json',
       contentType: 'application/json; charset=utf-8',
-      method: 'PUT',
+      method: method,
     }).done(function (data, textStatus, jqXHR) {
       // success, close the modal
       allocationModal.modal('hide');
