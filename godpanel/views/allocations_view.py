@@ -5,7 +5,7 @@ from django.http import HttpResponseForbidden
 from django.http import JsonResponse
 from django.views.generic import View
 
-from godpanel.models import Allocation, Employee, Project
+from godpanel.models import Allocation
 from godpanel.views.allocations_form_view import AllocationForm
 
 
@@ -44,30 +44,26 @@ class AllocationsView(View):
         else:
             return HttpResponseForbidden('You must authenticate')
 
+    def post(self, request):
+        request_object = json.loads(request.body.decode('utf-8'))
+        form = AllocationForm(request_object)
+
+        if form.is_valid():
+            form.save()
+            return JsonResponse({'message': 'ciao'})
+        else:
+            return JsonResponse(dict(form.errors), status=400)
+
     def put(self, request):
         request_object = json.loads(request.body.decode('utf-8'))
         allocation = Allocation.objects.get(pk=request_object['id'])
 
         # for error-checking, we use model form
-        form = AllocationForm(request_object)
+        form = AllocationForm(request_object, instance=allocation)
 
         if not form.is_valid():
             # return JSON response with errors
             return JsonResponse(dict(form.errors), status=400)
-
-        # set model properties, special cases for foreign keys
-        for key, value in request_object.items():
-            if key == 'employee':
-                employee = Employee.objects.get(pk=value)
-                setattr(allocation, key, employee)
-
-            elif key == 'project':
-                project = Project.objects.get(pk=value)
-                setattr(allocation, key, project)
-
-            else:
-                # plain property
-                setattr(allocation, key, value)
 
         try:
             allocation.save(force_update=True)

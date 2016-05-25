@@ -35,6 +35,8 @@ class AllocationForm(ModelForm):
 
 class AllocationsFormView(View):
     def get(self, request):
+        method = 'put'
+
         if 'allocation' in request.GET:
             allocation = Allocation.objects.get(pk=request.GET['allocation'])
             form = AllocationForm(instance=allocation)
@@ -46,7 +48,8 @@ class AllocationsFormView(View):
                 'employee': Employee.objects.get(pk=int(request.GET['resource_id'])),
                 'saturation': 100
             })
+            method = 'post'
         else:
             form = AllocationForm()
 
-        return render(request, 'form/allocation.html', {'form': form})
+        return render(request, 'form/allocation.html', {'form': form, 'method': method})

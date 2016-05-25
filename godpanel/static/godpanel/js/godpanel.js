@@ -62,12 +62,14 @@
   allocationModal.on('submit', '#allocation-form', function(e) {
     e.preventDefault();
 
+    var form_method = $(this).attr('method');
+
     var data = $(this).serializeObject(),
         allocationId = allocationModal.attr('data-allocation-id');
 
     data.id = allocationId;
 
-    updateEvent(data);
+    updateEvent(data, form_method);
 
     return false;
   });
