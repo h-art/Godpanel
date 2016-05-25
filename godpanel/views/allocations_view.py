@@ -50,8 +50,8 @@ class AllocationsView(View):
         form = AllocationForm(request_object)
 
         if form.is_valid():
-            form.save()
-            return JsonResponse({'message': 'ciao'})
+            allocation = form.save()
+            return JsonResponse({'message': 'allocation with id %d created' % allocation.id})
         else:
             return JsonResponse(dict(form.errors), status=400)
 
