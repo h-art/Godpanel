@@ -90,6 +90,10 @@
     }
 
     $(e.target).find('.modal-body').load('allocations/form/' + qsParams);
+  }).on('shown.bs.modal', function(e) {
+    $(this).find('.date').datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
   }).on('hidden.bs.modal', function () {
     $(this).removeAttr('data-allocation-id');
     $(this).removeAttr('data-resource-id');

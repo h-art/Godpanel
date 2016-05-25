@@ -21,8 +21,8 @@ class AllocationForm(ModelForm):
             'allocation_type': 'Tipo di allocazione',
         }
         widgets = {
-            'start': forms.DateInput(format='%Y-%m-%d', attrs={'class': 'form-control'}),
-            'end': forms.DateInput(format='%Y-%m-%d', attrs={'class': 'form-control'}),
+            'start': forms.DateInput(format='%Y-%m-%d', attrs={'class': 'form-control date'}),
+            'end': forms.DateInput(format='%Y-%m-%d', attrs={'class': 'form-control date'}),
             'employee': forms.Select(attrs={'class': 'form-control'}),
             'project': forms.Select(attrs={'class': 'form-control'}),
             'saturation': forms.TextInput(attrs={'class': 'form-control'}),
