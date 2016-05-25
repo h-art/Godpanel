@@ -60,15 +60,15 @@
   var allocationModal = $('#allocation-modal');
 
   allocationModal.on('submit', '#allocation-form', function(e) {
+    e.preventDefault();
+    return false;
+
     var data = $(this).serializeObject(),
         allocationId = allocationModal.attr('data-allocation-id');
 
     data.id = allocationId;
 
     updateEvent(data);
-
-    e.preventDefault();
-    return false;
   });
 
   // handle what happens when the allocation modal is opened
