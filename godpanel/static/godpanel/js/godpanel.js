@@ -85,12 +85,15 @@
     else {
       qsParams += 'new_allocation&resource_id=';
       qsParams += allocationModal.attr('data-resource-id');
+      qsParams += '&start=';
+      qsParams += allocationModal.attr('data-start');
     }
 
     $(e.target).find('.modal-body').load('allocations/form/' + qsParams);
   }).on('hidden.bs.modal', function () {
     $(this).removeAttr('data-allocation-id');
     $(this).removeAttr('data-resource-id');
+    $(this).removeAttr('data-start');
     // refresh the calendar every time a modal is closed
     godpanel.fullCalendar('refetchEvents');
   });
@@ -106,14 +109,22 @@
       updateEvent({
         id: event.id,
         start: event.start.format('YYYY-MM-DD'),
-        end: event.end.format('YYYY-MM-DD')
+        end: event.end.format('YYYY-MM-DD'),
+        employee: event.resourceId,
+        project: event.project_id,
+        saturation: event.saturation,
+        allocation_type: event.allocation_type
       });
     },
     eventResize: function (event, jsEvent, ui, view) {
       updateEvent({
         id: event.id,
         start: event.start.format('YYYY-MM-DD'),
-        end: event.end.format('YYYY-MM-DD')
+        end: event.end.format('YYYY-MM-DD'),
+        employee: event.resourceId,
+        project: event.project_id,
+        saturation: event.saturation,
+        allocation_type: event.allocation_type
       });
     },
     events: 'allocations/',
@@ -123,6 +134,7 @@
 
     dayClick: function (date, jsEvent, view, resourceObj) {
       allocationModal.attr('data-resource-id', resourceObj.id);
+      allocationModal.attr('data-start', date.format('YYYY-MM-DD'));
       allocationModal.modal();
     },
 
