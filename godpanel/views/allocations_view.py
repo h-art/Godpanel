@@ -34,6 +34,7 @@ class AllocationsView(View):
                                         minute=59),
                         'saturation': allocation.saturation,
                         'title': allocation.project.name,
+                        'project_id': allocation.project.id,
                         'client': allocation.project.client.name,
                         'allocation_type': allocation.allocation_type,
                         'note': allocation.note
