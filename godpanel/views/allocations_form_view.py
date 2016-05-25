@@ -1,0 +1,36 @@
+from django.forms import ModelForm
+from django import forms
+from django.shortcuts import render
+from django.views.generic import View
+
+from godpanel.models import Allocation
+
+
+class AllocationForm(ModelForm):
+    class Meta:
+        fields = ['start', 'end', 'employee', 'project', 'saturation', 'note', 'allocation_type']
+        labels = {
+            'start': 'Inizio',
+            'end': 'Fine',
+            'employee': 'Risorsa',
+            'project': 'Progetto',
+            'saturation': 'Saturazione',
+            'note': 'Note',
+            'allocation_type': 'Tipo di allocazione',
+        }
+        widgets = {
+            'start': forms.DateInput(format='%Y-%m-%d', attrs={'class': 'form-control'}),
+            'end': forms.DateInput(format='%Y-%m-%d', attrs={'class': 'form-control'}),
+        }
+        model = Allocation
+
+
+class AllocationsFormView(View):
+    def get(self, request):
+        if 'allocation' in request.GET:
+            allocation = Allocation.objects.get(pk=request.GET['allocation'])
+            form = AllocationForm(instance=allocation)
+        else:
+            form = AllocationForm()
+
+        return render(request, 'form/allocation.html', {'form': form})

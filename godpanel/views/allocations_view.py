@@ -1,11 +1,12 @@
 import json
 from datetime import datetime
 
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponseForbidden
 from django.http import JsonResponse
 from django.views.generic import View
 
-from godpanel.models import Allocation
+from godpanel.models import Allocation, Employee, Project
+from godpanel.views.allocations_form_view import AllocationForm
 
 
 class AllocationsView(View):
@@ -22,21 +23,21 @@ class AllocationsView(View):
         end_date = datetime.strptime(end, '%Y-%m-%d')
 
         response = [{
-            'id': allocation.id,
-            'resourceId': allocation.employee.id,
-            'start': allocation.start,
-            # add 23:59 to end event (fixes issue for events ending 1 day before)
-            'end': datetime(year=allocation.end.year,
-                            month=allocation.end.month,
-                            day=allocation.end.day,
-                            hour=23,
-                            minute=59),
-            'saturation': allocation.saturation,
-            'title': allocation.project.name,
-            'client': allocation.project.client.name,
-            'allocation_type': allocation.allocation_type,
-            'note': allocation.note
-        } for allocation in Allocation.objects.filter(end__gte=start_date, start__lte=end_date)]
+                        'id': allocation.id,
+                        'resourceId': allocation.employee.id,
+                        'start': allocation.start,
+                        # add 23:59 to end event (fixes issue for events ending 1 day before)
+                        'end': datetime(year=allocation.end.year,
+                                        month=allocation.end.month,
+                                        day=allocation.end.day,
+                                        hour=23,
+                                        minute=59),
+                        'saturation': allocation.saturation,
+                        'title': allocation.project.name,
+                        'client': allocation.project.client.name,
+                        'allocation_type': allocation.allocation_type,
+                        'note': allocation.note
+                    } for allocation in Allocation.objects.filter(end__gte=start_date, start__lte=end_date)]
 
         if request.user.is_authenticated():
             return JsonResponse(response, safe=False)
@@ -47,15 +48,33 @@ class AllocationsView(View):
         request_object = json.loads(request.body.decode('utf-8'))
         allocation = Allocation.objects.get(pk=request_object['id'])
 
-        allocation.start = request_object['start']
-        allocation.end = request_object['end']
+        # for error-checking, we use model form
+        form = AllocationForm(request_object)
+
+        if not form.is_valid():
+            # return JSON response with errors
+            return JsonResponse(dict(form.errors), status=400)
+
+        # set model properties, special cases for foreign keys
+        for key, value in request_object.items():
+            if key == 'employee':
+                employee = Employee.objects.get(pk=value)
+                setattr(allocation, key, employee)
+
+            elif key == 'project':
+                project = Project.objects.get(pk=value)
+                setattr(allocation, key, project)
+
+            else:
+                # plain property
+                setattr(allocation, key, value)
 
         try:
-            allocation.save()
-            response = JsonResponse({'message': 'resource %d updated' % (request_object['id'])})
+            allocation.save(force_update=True)
+            response = JsonResponse({'message': 'resource %d updated' % (int(request_object['id']))})
         except Exception as e:
             response = JsonResponse({
-                'message': 'error updating resource with id %d' % (request_object['id']),
+                'message': 'error updating resource with id %d' % (int(request_object['id'])),
                 'stack_trace': str(e)
             }, status=500)
 

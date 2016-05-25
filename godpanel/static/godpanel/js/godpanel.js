@@ -41,26 +41,51 @@
    * @param  {object} event The event object
    * @return void
    */
-  function updateEvent (event) {
+  function updateEvent(data) {
     jQuery.ajax({
       url: '/godpanel/allocations/',
       headers: { 'X-CSRFToken': getCookie('csrftoken') },
-      data: JSON.stringify({
-        id: event.id,
-        start: event.start.format('YYYY-MM-DD'),
-        end: event.end.format('YYYY-MM-DD')
-      }),
+      data: JSON.stringify(data),
       dataType: 'json',
       contentType: 'application/json; charset=utf-8',
       method: 'PUT',
     }).done(function (data, textStatus, jqXHR) {
-      // Success, do nothing
+      // success, close the modal
+      allocationModal.modal('hide');
     }).fail(function (data, textStatus, jqXHR) {
-      alert(data.responseJSON.message);
+      console.log(data, textStatus);
     });
   }
 
   var allocationModal = $('#allocation-modal');
+
+  allocationModal.on('submit', '#allocation-form', function(e) {
+    var data = $(this).serializeObject(),
+        allocationId = allocationModal.attr('data-allocation-id');
+
+    data.id = allocationId;
+
+    updateEvent(data);
+
+    e.preventDefault();
+    return false;
+  });
+
+  // handle what happens when the allocation modal is opened
+  allocationModal.on('show.bs.modal', function(e) {
+    var qsParams = '?',
+        allocationId = $(this).attr('data-allocation-id');
+
+    if (allocationId) {
+      qsParams += 'allocation=' + allocationId;
+    }
+
+    $(e.target).find('.modal-body').load('allocations/form/' + qsParams);
+  }).on('hidden.bs.modal', function () {
+    $(this).removeAttr('data-allocation-id');
+    // refresh the calendar every time a modal is closed
+    godpanel.fullCalendar('refetchEvents');
+  });
 
   window.godpanel = $('#calendar').fullCalendar({
     schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
@@ -69,62 +94,45 @@
     defaultView: 'timelineMonth',
     defaultDate: new Date(),
     editable: true,
-    eventDrop: function (event, jsEvent, ui, view) { updateEvent(event); },
-    eventResize: function (event, jsEvent, ui, view) { updateEvent(event); },
+    eventDrop: function (event, jsEvent, ui, view) {
+      updateEvent({
+        id: event.id,
+        start: event.start.format('YYYY-MM-DD'),
+        end: event.end.format('YYYY-MM-DD')
+      });
+    },
+    eventResize: function (event, jsEvent, ui, view) {
+      updateEvent({
+        id: event.id,
+        start: event.start.format('YYYY-MM-DD'),
+        end: event.end.format('YYYY-MM-DD')
+      });
+    },
     events: 'allocations/',
     resources: 'employees/',
     weekends: false,
     lang: 'it',
-    customButtons: {
-      addAllocationButton: {
-        text: 'Nuova allocazione',
-        click: function () {
-          allocationModal
-            .modal({show: true})
-            .on('shown.bs.modal', function () {
-              $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/godpanel/allocation/add/?_popup=1');
-            })
-            .on('hidden.bs.modal', function () {
-              godpanel.fullCalendar('refetchEvents');
-            });
-        }
-      }
+
+    dayClick: function (date, jsEvent, view, resourceObj) {
+      allocationModal.modal();
     },
+
     header: {
       left: 'addAllocationButton',
       center: 'title'
     },
+
     eventRender: function (event, element, view) {
-      event.note = (event.note) ? event.note : '-'; // tweak event note.
+      event.note = (event.note) ? event.note : '-'; // tweak event note
       element.find('.fc-title').append(' (' + event.saturation + '%)');
       element.find('.fc-time').remove();
+
+      // handle click on an existing event
       element.on('click', function(e) {
-        allocationModal
-          .modal({show: true})
-          .on('shown.bs.modal', function () {
-            $(this).find('iframe').attr('src', location.protocol + '//' + location.host + '/admin/godpanel/allocation/' + event.id + '/change/?_popup=1');
-          })
-          .on('hidden.bs.modal', function () {
-            godpanel.fullCalendar('refetchEvents');
-          });
+        allocationModal.attr('data-allocation-id', event.id);
+        allocationModal.modal({show: true})
       });
-//      element.qtip({
-//        content: {
-//          text: '<strong>' + event.allocation_type + '</strong><br>'
-//                + 'Cliente: ' + event.client + '<br>'
-//                + 'Progetto: ' + event.title + '<br>'
-//                + 'Saturazione: ' + event.saturation + '<br>'
-//                + 'Inizio: ' + moment(event.start).format('DD/MM/YYYY') + '<br>'
-//                + 'Fine: ' + moment(event.end).format('DD/MM/YYYY') + '<br>'
-//                + 'Note: ' + event.note
-//        },
-//        position: {
-//          target: 'mouse',
-//          adjust: {
-//            mouse: false  // Can be omitted (e.g. default behaviour)
-//          }
-//        }
-//      });
+
       switch (event.allocation_type) {
         case 'allocation':
           element.css('background', 'green');
@@ -146,4 +154,4 @@
         .append(' <small>(' + [resourceObj.area, resourceObj.role].join(', ') + ')</small>');
     }
   });
-});
+}(jQuery));
