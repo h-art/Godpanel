@@ -51,11 +51,15 @@ class Allocation(models.Model):
     ALLOCATION = 'allocation'
     PRE_ALLOCATION = 'pre-allocation'
     GUESS = 'guess'
+    OFF_REQUEST = 'off_request'
+    OFF = 'off'
 
     ALLOCATION_TYPES = (
-        (ALLOCATION, 'Allocation'),
-        (PRE_ALLOCATION, 'Pre allocation'),
+        (ALLOCATION, 'Allocazione'),
+        (PRE_ALLOCATION, 'Pre allocazione'),
         (GUESS, 'Guess'),
+        (OFF_REQUEST, 'Richiesta time-off'),
+        (OFF, 'Time-off'),
     )
 
     start = models.DateField()

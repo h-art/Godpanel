@@ -171,6 +171,18 @@
         case 'guess':
           element.css('background', 'red');
           break;
+        case 'off_request':
+          element.css({
+            'background': 'orange',
+            'color': 'black'
+          });
+          break;
+        case 'off':
+          element.css({
+            'background': 'blue',
+            'color': 'white'
+          });
+          break;
       }
     },
 
